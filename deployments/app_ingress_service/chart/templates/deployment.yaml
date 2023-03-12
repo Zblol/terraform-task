@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    app: {{ .Values.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+    spec:
+      containers:
+      - name: {{ .Values.name }}
+        workingDir: /opt
+        image: {{ .Values.image}}
+        imagePullPolicy: Always
+        command: ["streamlit", "run", "{{ .Values.file }}" "--server.address", "0.0.0.0", "--server.port", "{{ .Values.ports.port }}"]

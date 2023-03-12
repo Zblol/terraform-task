@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    app: {{ .Values.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/path: '/metrics'
+        prometheus.io/port: '9052'
+    spec:
+      containers:
+      - name: {{ .Values.name }}
+        workingDir: /opt
+        image: {{ .Values.image}}
+        imagePullPolicy: Always
+        command: ["python3", {{ .Values.file }}]

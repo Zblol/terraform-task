@@ -1,0 +1,1 @@
+1 deploy without providing services (api) but it has metrics that should be taken by prometheus

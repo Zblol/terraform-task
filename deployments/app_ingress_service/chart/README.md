@@ -1,0 +1,1 @@
+1 deploy + service + ingress 
