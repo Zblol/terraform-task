@@ -14,6 +14,6 @@ variable "zone" {
 }
 
 variable "cred_path" {
-  description = "The region to host the cluster in"
+  description = "path to credentials"
   default = ""
 }
