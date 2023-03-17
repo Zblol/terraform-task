@@ -7,6 +7,7 @@ terraform {
   }
 }
 
+
 provider "google" {
   credentials = var.cred_path
   project     = var.project
