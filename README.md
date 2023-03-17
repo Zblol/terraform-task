@@ -16,29 +16,29 @@ As well as the result, which should be in the end.
 
 ---
 
-1. Creating a custom image talos linux *(dir. custom_talos_image)*
+1. **Creating a custom image talos linux *(dir. custom_talos_image)***
     - storage bucket
     - compute image 
 ---
-2. Creating and setting up a network *(dir. network)*
+2. **Creating and setting up a network *(dir. network)***
     - Network
     - Subnetwork
     - Firewall
     - External ip for controlplane and worker node
 ---
-3. Creating and setting up the controlplane and worker node *(dir. instances)*
+3. **Creating and setting up the controlplane and worker node *(dir. instances)***
     - Compute instance controlplane
     - Controlplane instance group
     - Health check tcp instance group
     - Compute instance worker node
 ---
-4. Creating and setting up LB *(dir. load_balancer)*
+4. **Creating and setting up LB *(dir. load_balancer)***
     - backend service
     - load balancer
     - proxy
     - forwarding rule
 ---
-5. Running commands to create and customize configuration files for talos linux and kubernetes *(dir. config_creator)*
+5. **Running commands to create and customize configuration files for talos linux and kubernetes *(dir. config_creator)***
     - talos config
     - apply-config controlplane
     - apply-config worker node
