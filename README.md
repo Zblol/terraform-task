@@ -50,6 +50,7 @@ As well as the result, which should be in the end.
 **It is necessary to follow the order of the terraform configurations above.** 
 
 Result:
+![nodes_list](https://user-images.githubusercontent.com/42673508/225827044-49c62348-24dc-4516-946b-f526d38b5424.png)
 
 <br>
 <br>
@@ -74,6 +75,7 @@ I will do a basic installation using the repositories:
 
 Result:
 
+![nginx](https://user-images.githubusercontent.com/42673508/225827060-43707085-790d-4e35-9e98-68d4a37e07f0.png)
 
 
 
@@ -90,6 +92,7 @@ Result:
 
 
 Result:
+![prometheus_pod_list](https://user-images.githubusercontent.com/42673508/225827072-12ae794b-8dd3-49b5-a2c0-27de2a2e6dbc.png)
 
 
 
