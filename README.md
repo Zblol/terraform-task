@@ -2,8 +2,8 @@
 
 *"Test project, to demonstrate work with GCP and Terraform"*
 
-- [Introductory Instruction](#introductory-instruction)
-- [Install Ingress-nginx and Prometheus](#install-ingress-nginx-and-prometheus)
+- ### **[Introductory Instruction](#introductory-instruction)**
+- ### **[Install Ingress-nginx and Prometheus](#install-ingress-nginx-and-prometheus)**
 
 ## Introductory Instruction
 
