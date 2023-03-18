@@ -1,0 +1,22 @@
+name: TerraformCheck
+on:
+  push:
+    paths:
+      - 'network/**.tf'
+      - 'instances/**.tf'
+      - 'load_balancer/**.tf'
+      - 'custom_talos_image/**.tf'
+      - 'config_creator/**.tf'
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  check_configs:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: check_by_tfsec
+        run: tfsec .
+
+
