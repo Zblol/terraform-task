@@ -15,9 +15,9 @@ resource "google_storage_bucket" "storage-images" {
 }
 
 resource "google_storage_bucket_object" "talos_image" {
-  name     = "talos-gcp-amd64.tar.gz"
-  source   = "gcp-amd64.tar.gz"
-  bucket   = google_storage_bucket.storage-images.name
+  name   = "talos-gcp-amd64.tar.gz"
+  source = "gcp-amd64.tar.gz"
+  bucket = google_storage_bucket.storage-images.name
 }
 
 resource "google_compute_image" "talos" {

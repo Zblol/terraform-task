@@ -6,16 +6,16 @@ resource "google_compute_instance" "talos_controlplane_1" {
 
   boot_disk {
     initialize_params {
-      size = 20
-      image = "${data.google_compute_image.talos.self_link}"
+      size  = 20
+      image = data.google_compute_image.talos.self_link
     }
   }
 
   network_interface {
-    network       = "${data.google_compute_network.talos_network.self_link}"
-    subnetwork = "${data.google_compute_subnetwork.talos_subnet.self_link}"
+    network    = data.google_compute_network.talos_network.self_link
+    subnetwork = data.google_compute_subnetwork.talos_subnet.self_link
     access_config {
-      nat_ip = "${data.google_compute_address.talos_controlplane_1_ip.address}"
+      nat_ip = data.google_compute_address.talos_controlplane_1_ip.address
     }
   }
 
@@ -48,17 +48,17 @@ resource "google_compute_instance" "talos_worker_1" {
 
   boot_disk {
     initialize_params {
-      image = "${data.google_compute_image.talos.self_link}"
+      image = data.google_compute_image.talos.self_link
       size  = 20
     }
   }
 
   network_interface {
-    network       = "${data.google_compute_network.talos_network.self_link}"
-    subnetwork = "${data.google_compute_subnetwork.talos_subnet.self_link}"
+    network    = data.google_compute_network.talos_network.self_link
+    subnetwork = data.google_compute_subnetwork.talos_subnet.self_link
     access_config {
-      nat_ip = "${data.google_compute_address.talos_worker_1_ip.address}"
+      nat_ip = data.google_compute_address.talos_worker_1_ip.address
     }
   }
 
-}   
+}
