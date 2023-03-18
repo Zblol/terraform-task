@@ -2,7 +2,7 @@
 resource "google_compute_instance" "talos_controlplane_1" {
   name         = "talos-controlplane-1"
   machine_type = "n1-standard-2"
-  zone         = "us-central1-a"
+  zone         = var.zone
 
   boot_disk {
     initialize_params {
