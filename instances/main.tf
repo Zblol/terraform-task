@@ -38,15 +38,6 @@ resource "google_compute_instance_group" "talos_controlplane_group" {
   }
 }
 
-# Create health check
-resource "google_compute_health_check" "talos_tcp_group_health_check" {
-  name = "talos-tcp-group-health-check"
-  check_interval_sec = 5
-  timeout_sec = 5
-  tcp_health_check {
-    port = 6443
-  }
-}
 
 ## CREATE WORKER INSTANCE
 resource "google_compute_instance" "talos_worker_1" {

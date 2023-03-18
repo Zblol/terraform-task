@@ -1,3 +1,13 @@
+# Create health check
+resource "google_compute_health_check" "talos_tcp_group_health_check" {
+  name = "talos-tcp-group-health-check"
+  check_interval_sec = 5
+  timeout_sec = 5
+  tcp_health_check {
+    port = 6443
+  }
+}
+
 # Create backend
 # Add instance group to backend
 resource "google_compute_backend_service" "talos_backend" {
