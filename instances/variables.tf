@@ -39,3 +39,11 @@ data "google_compute_address" "talos_worker_1_ip" {
   name = "talos-worker-1-ip"
 }
 
+
+locals {
+  talos-image        = data.google_compute_image.talos.self_link
+  talos-network      = data.google_compute_network.talos_network.self_link
+  talos-subnetwork   = data.google_compute_subnetwork.talos_subnet.self_link
+  control_plane_1_ip = data.google_compute_instance.talos_controlplane_1.address
+  worker_node_1_ip   = data.google_compute_instance.talos_worker_1.address
+}

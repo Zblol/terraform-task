@@ -7,15 +7,15 @@ resource "google_compute_instance" "talos_controlplane_1" {
   boot_disk {
     initialize_params {
       size  = 20
-      image = data.google_compute_image.talos.self_link
+      image = local.talos-image
     }
   }
 
   network_interface {
-    network    = data.google_compute_network.talos_network.self_link
-    subnetwork = data.google_compute_subnetwork.talos_subnet.self_link
+    network    = local.talos-network
+    subnetwork = local.talos-subnetwork
     access_config {
-      nat_ip = data.google_compute_address.talos_controlplane_1_ip.address
+      nat_ip = local.control_plane_1_ip
     }
   }
 
@@ -48,16 +48,16 @@ resource "google_compute_instance" "talos_worker_1" {
 
   boot_disk {
     initialize_params {
-      image = data.google_compute_image.talos.self_link
+      image = local.talos-image
       size  = 20
     }
   }
 
   network_interface {
-    network    = data.google_compute_network.talos_network.self_link
-    subnetwork = data.google_compute_subnetwork.talos_subnet.self_link
+    network    = local.network
+    subnetwork = local.subnet
     access_config {
-      nat_ip = data.google_compute_address.talos_worker_1_ip.address
+      nat_ip = worker_node_1_ip
     }
   }
 

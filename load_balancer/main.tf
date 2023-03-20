@@ -15,9 +15,9 @@ resource "google_compute_backend_service" "talos_backend" {
   protocol      = "TCP"
   timeout_sec   = 300
   port_name     = "tcpgroup"
-  health_checks = ["${data.google_compute_health_check.talos_tcp_group_health_check.self_link}"]
+  health_checks = ["${local.talos_tcp_group_health_check}"]
   backend {
-    group = data.google_compute_instance_group.talos_controlplane_group.id
+    group = local.talos_controlplane_group
   }
 }
 
