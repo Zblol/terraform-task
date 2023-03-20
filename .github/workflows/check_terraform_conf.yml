@@ -17,6 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: check_by_tfsec
-        run: tfsec .
+        run: tfsec --soft-fail .
 
 

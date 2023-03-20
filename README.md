@@ -3,7 +3,7 @@
 *"Test project, to demonstrate work with GCP and Terraform"*
 
 - ### **[Introductory Instruction](#introductory-instruction)**
-- ### **[Install Ingress-nginx and Prometheus](#install-ingress-nginx-and-prometheus)**
+- ### **[Install Ingress and Prometheus](#install-ingress-and-prometheus-1)**
 
 ## Introductory Instruction
 
@@ -56,7 +56,7 @@ Result:
 <br>
 <br>
 
-## Install Ingress-nginx and Prometheus
+## Install Ingress and Prometheus
 
 I suggest using helm to install ingress-nginx and prometheus.
 I will do a basic installation using the repositories:
